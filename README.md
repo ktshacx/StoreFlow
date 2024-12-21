@@ -54,7 +54,7 @@ Follow these steps to install and run the app on your local machine:
 
 3. **Configure Firebase:**
    - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/).
-   - Enable Firestore, Authentication, and Storage.
+   - Enable Firestore and Email Authentication.
    - Replace the `firebaseConfig` in the `firebase.js` file with your Firebase credentials.
 
 4. **Run the App:**
