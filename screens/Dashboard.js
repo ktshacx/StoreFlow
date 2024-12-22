@@ -8,8 +8,10 @@ import {
   Alert,
   ScrollView,
   RefreshControl,
+  Touchable,
+  Linking,
 } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { Link, useNavigation } from "@react-navigation/native";
 import { useAuth } from "../hooks/useAuth";
 import { getStoreDataByEmail, getStoreNameByEmail } from "../hooks/useStoredata";
 import { collection, getDocs } from "firebase/firestore";
@@ -217,6 +219,11 @@ export default function Dashboard() {
           <Text style={styles.buttonText}>Store Settings</Text>
         </TouchableOpacity>
       </ScrollView>
+      <View style={{display: 'flex', flex: 1, alignItems: 'center', justifyContent: 'flex-end'}}>
+        <TouchableOpacity onPress={() => Linking.openURL('https://buymeacoffee.com/ktshacx')}>
+          <Text style={{fontWeight: '600', color: '#666'}}>Created with ❤️ by @ktshacx</Text>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 }
