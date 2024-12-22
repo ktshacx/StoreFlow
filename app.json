@@ -13,13 +13,15 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ktshacx.storeflow"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.ktshacx.storeflow"
     },
     "web": {
       "favicon": "./assets/icon.png"
@@ -29,9 +31,6 @@
         "projectId": "fb71a58f-9d7d-455a-961c-93eb98bcba47"
       }
     },
-    "owner": "ktshacx",
-    "plugins": [
-      "expo-barcode-scanner"
-    ]
+    "owner": "ktshacx"
   }
 }
