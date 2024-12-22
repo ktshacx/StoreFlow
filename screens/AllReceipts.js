@@ -12,6 +12,7 @@ import { collection, query, where, orderBy, limit, startAfter, getDocs } from "f
 import { firestore } from "../firebase";
 import { useAuth } from "../hooks/useAuth";
 import { useNavigation } from "@react-navigation/native";
+import { getStoreDataByEmail } from "../hooks/useStoredata";
 
 export default function ReceiptViewer() {
   const { user } = useAuth();
@@ -22,10 +23,15 @@ export default function ReceiptViewer() {
   const [loadingMore, setLoadingMore] = useState(false);
   const [lastVisible, setLastVisible] = useState(null);
   const [hasMore, setHasMore] = useState(true);
+  const [storedata, setStoredata] = useState(null);
 
   useEffect(() => {
     if (user) {
       fetchReceipts();
+      getStoreDataByEmail(user.email)
+      .then((data) => {
+        setStoredata(data);
+      })
     }
   }, [user]);
 
@@ -83,7 +89,7 @@ export default function ReceiptViewer() {
       <Text style={styles.receiptDate}>
         Date: {new Date(item.createdAt).toLocaleDateString()}
       </Text>
-      <Text style={styles.receiptTotal}>Total: ₹{item.total.toFixed(2)}</Text>
+      <Text style={styles.receiptTotal}>Total: {storedata ? storedata.currencySymbol : '₹'}{item.total.toFixed(2)}</Text>
     </TouchableOpacity>
   );
 

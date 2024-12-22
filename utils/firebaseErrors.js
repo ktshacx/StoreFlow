@@ -12,6 +12,6 @@ const firebaseErrorMessages = {
 };
 
 export function getFirebaseErrorMessage(code) {
-    console.log(code)
+  console.log(code)
   return firebaseErrorMessages[code] || "An unknown error occurred. Please try again.";
 }

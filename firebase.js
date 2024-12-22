@@ -4,12 +4,12 @@ import { getAuth, initializeAuth, getReactNativePersistence } from "firebase/aut
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_AUTH_DOMAIN",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID",
+    apiKey: "AIzaSyAwOGVTO3qqYYxXznj0EfBEIug37CQxtNc",
+    authDomain: "storeflow-native.firebaseapp.com",
+    projectId: "storeflow-native",
+    storageBucket: "storeflow-native.firebasestorage.app",
+    messagingSenderId: "330176619400",
+    appId: "1:330176619400:web:f907439e1036700c10903d"
 };
 
 const app = initializeApp(firebaseConfig);

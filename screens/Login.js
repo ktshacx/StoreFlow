@@ -14,6 +14,7 @@ export default function Login({ navigation }) {
       await signInWithEmailAndPassword(auth, email, password);
       navigation.navigate("Dashboard");
     } catch (err) {
+      console.log(err)
       setError(getFirebaseErrorMessage(err.code));
     }
   };

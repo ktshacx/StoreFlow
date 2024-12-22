@@ -119,7 +119,10 @@ export default function StoreSettings() {
               await auth.signOut();
   
               Alert.alert("Account Deleted", "Your account has been successfully deleted.");
-              navigation.replace("Login");
+              navigation.reset({
+                index: 0,
+                routes: [{ name: "Login" }],
+              });
             } catch (error) {
               console.error("Error deleting account:", error);
               Alert.alert("Error", "Failed to delete account.");

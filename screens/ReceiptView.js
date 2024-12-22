@@ -142,10 +142,10 @@ export default function ReceiptView({ route }) {
                 {index + 1}. {item.itemName}
               </Text>
               <Text style={styles.itemDetails}>
-                ${storedata ? storedata.currencySymbol : '₹'}{item.itemPrice.toFixed(2)} x {item.quantity}
+                {storedata ? storedata.currencySymbol : '₹'}{item.itemPrice.toFixed(2)} x {item.quantity}
               </Text>
               <Text style={styles.itemTotal}>
-                ${storedata ? storedata.currencySymbol : '₹'}{(item.itemPrice * item.quantity).toFixed(2)}
+                {storedata ? storedata.currencySymbol : '₹'}{(item.itemPrice * item.quantity).toFixed(2)}
               </Text>
             </View>
           )}
@@ -153,7 +153,7 @@ export default function ReceiptView({ route }) {
           style={styles.itemList}
           ListHeaderComponent={<Text style={styles.listHeader}>Items</Text>}
         />
-        <Text style={styles.totalText}>Total: ₹{receipt.total.toFixed(2)}</Text>
+        <Text style={styles.totalText}>Total: {storedata ? storedata.currencySymbol : '₹'}{receipt.total.toFixed(2)}</Text>
 
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.button} onPress={handleSendWhatsApp}>

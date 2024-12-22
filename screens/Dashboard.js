@@ -34,7 +34,10 @@ export default function Dashboard() {
 
   useEffect(() => {
     if (!loading && user === null) {
-      navigation.navigate("Login");
+      navigation.reset({
+        index: 0,
+        routes: [{ name: "Login" }],
+      });
     }
 
     async function fetchData() {
@@ -53,7 +56,10 @@ export default function Dashboard() {
   const handleLogout = async () => {
     try {
       await signOut(auth);
-      navigation.replace("Login");
+      navigation.reset({
+        index: 0,
+        routes: [{ name: "Login" }],
+      });
     } catch (error) {
       Alert.alert("Error", "Failed to log out. Please try again.");
       console.error("Logout error:", error);
