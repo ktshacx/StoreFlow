@@ -1,7 +1,5 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './screens/Dashboard';
 import Login from './screens/Login';
 import Signup from './screens/SignUp';
@@ -12,7 +10,7 @@ import ItemsList from './screens/ItemsList';
 import StoreSettings from './screens/StoreSettings';
 import ReceiptViewer from './screens/AllReceipts';
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (

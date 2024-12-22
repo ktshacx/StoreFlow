@@ -12,7 +12,10 @@ export default function Login({ navigation }) {
   const handleLogin = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigation.navigate("Dashboard");
+      navigation.reset({
+        index: 0,
+        routes: [{ name: "Dashboard" }],
+      });
     } catch (err) {
       console.log(err)
       setError(getFirebaseErrorMessage(err.code));

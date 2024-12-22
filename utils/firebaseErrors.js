@@ -8,7 +8,8 @@ const firebaseErrorMessages = {
   "auth/too-many-requests": "Too many attempts. Please try again later.",
   "auth/network-request-failed": "Network error. Please check your internet connection.",
   "auth/internal-error": "An unexpected error occurred. Please try again.",
-  "auth/invalid-credential": "Incorrect email or password. Please try again."
+  "auth/invalid-credential": "Incorrect email or password. Please try again.",
+  "auth/invalid-login-credentials": "Incorrect email or password. Please try again."
 };
 
 export function getFirebaseErrorMessage(code) {

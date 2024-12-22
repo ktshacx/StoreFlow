@@ -28,7 +28,10 @@ export default function Signup({ navigation }) {
         createdAt: new Date(),
       });
 
-      navigation.navigate("Dashboard");
+      navigation.reset({
+        index: 0,
+        routes: [{ name: "Dashboard" }],
+      });
     } catch (err) {
         setError(getFirebaseErrorMessage(err.code));
     }
