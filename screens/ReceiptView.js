@@ -68,7 +68,7 @@ export default function ReceiptView({ route }) {
 
   const handleSendWhatsApp = () => {
     const message = generateReceiptText();
-    const url = `https://wa.me/${storedata ? storedata.mobilePrefix.split('+')[1] : '91'}${receipt.customerMobile || ""}?text=${encodeURIComponent(message)}&phone=`;
+    const url = `https://wa.me/${storedata ? storedata.mobilePrefix.split('+')[1] : '91'}${receipt.customerMobile || ""}?text=${encodeURIComponent(message)}`;
 
     Linking.canOpenURL(url).then((supported) => {
       if (supported) {
@@ -81,7 +81,7 @@ export default function ReceiptView({ route }) {
 
   const handleSendMessage = () => {
     const message = generateReceiptText();
-    const url = `sms:${receipt.customerMobile || ""}?body=${encodeURIComponent(
+    const url = `sms:${storedata ? storedata.mobilePrefix : '+91'}${receipt.customerMobile || ""}?body=${encodeURIComponent(
       message
     )}`;
 
@@ -142,10 +142,10 @@ export default function ReceiptView({ route }) {
                 {index + 1}. {item.itemName}
               </Text>
               <Text style={styles.itemDetails}>
-                ₹{item.itemPrice.toFixed(2)} x {item.quantity}
+                ${storedata ? storedata.currencySymbol : '₹'}{item.itemPrice.toFixed(2)} x {item.quantity}
               </Text>
               <Text style={styles.itemTotal}>
-                ₹{(item.itemPrice * item.quantity).toFixed(2)}
+                ${storedata ? storedata.currencySymbol : '₹'}{(item.itemPrice * item.quantity).toFixed(2)}
               </Text>
             </View>
           )}
