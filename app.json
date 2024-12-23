@@ -12,6 +12,10 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "androidStatusBar": {
+      "backgroundColor": "#ffffff",
+      "translucent": false
+    },
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.ktshacx.storeflow",

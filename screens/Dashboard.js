@@ -10,6 +10,7 @@ import {
   RefreshControl,
   Touchable,
   Linking,
+  Platform,
 } from "react-native";
 import { Link, useNavigation } from "@react-navigation/native";
 import { useAuth } from "../hooks/useAuth";
@@ -162,7 +163,7 @@ export default function Dashboard() {
             }}
           >
             <Text style={styles.dateButtonText}>
-              Start Date: {startDate.toLocaleDateString()}
+              Start {Platform.OS == "ios" && "Date"}: {startDate.toLocaleDateString()}
             </Text>
           </TouchableOpacity>
 
@@ -174,7 +175,7 @@ export default function Dashboard() {
             }}
           >
             <Text style={styles.dateButtonText}>
-              End Date: {endDate.toLocaleDateString()}
+              End {Platform.OS == "ios" && "Date"}: {endDate.toLocaleDateString()}
             </Text>
           </TouchableOpacity>
         </View>
@@ -221,7 +222,7 @@ export default function Dashboard() {
       </ScrollView>
       <View style={{display: 'flex', flex: 1, alignItems: 'center', justifyContent: 'flex-end'}}>
         <TouchableOpacity onPress={() => Linking.openURL('https://buymeacoffee.com/ktshacx')}>
-          <Text style={{fontWeight: '600', color: '#666'}}>Created with ❤️ by @ktshacx</Text>
+          <Text style={{fontWeight: '600', color: '#666', marginBottom: Platform.OS == "android" && 20}}>Created with ❤️ by @ktshacx</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -229,7 +230,7 @@ export default function Dashboard() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#fff" },
+  container: { flex: 1, backgroundColor: "#fff"},
   scrollContainer: { padding: 16 },
   title: { fontSize: 24, fontWeight: "bold", marginBottom: 24, textAlign: "center" },
   infoText: { fontSize: 18, marginBottom: 8, textAlign: "center" },
