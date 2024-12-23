@@ -2,7 +2,7 @@
   "expo": {
     "name": "StoreFlow",
     "slug": "storeflow",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -13,8 +13,12 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.ktshacx.storeflow"
+      "supportsTablet": false,
+      "bundleIdentifier": "com.ktshacx.storeflow",
+      "infoPlist": {
+        "UIDeviceFamily": [1],
+        "NSCameraUsageDescription": "This app requires camera access to allow users to scan their barcoder. Photos will not be saved privately or shared publicly."
+      }
     },
     "android": {
       "adaptiveIcon": {
